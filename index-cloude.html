@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>林宇軒 · 前端工程師 | Frontend Developer Portfolio</title>
+  <meta name="description" content="林宇軒的個人品牌網站，展示前端開發技能、專案作品集與聯絡方式。專注於打造優質的使用者介面與體驗，歡迎瀏覽我的作品並與我聯繫。">
+  
+  <style>
+    /* CSS:BASE-START */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", "PingFang TC", "Noto Sans TC", sans-serif;
+      line-height: 1.6;
+      color: #e4e4e7;
+      background-color: #0f172a;
+      margin: 0;
+    }
+    
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      width: 100%;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .section {
+      padding: 4rem 0;
+      min-height: 50vh;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #f1f5f9;
+      font-weight: 700;
+    }
+    
+    main {
+      flex: 1;
+    }
+    /* CSS:BASE-END */
+    
+    /* 導覽列樣式 */
+    .site-header {
+      background-color: #1e293b;
+      border-bottom: 2px solid #334155;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+    
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .nav-brand {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #06b6d4;
+      text-decoration: none;
+    }
+    
+    .nav-menu {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+    
+    .nav-link {
+      color: #cbd5e1;
+      text-decoration: none;
+      padding: 0.5rem 0;
+      transition: color 0.3s ease;
+      border-bottom: 2px solid transparent;
+    }
+    
+    .nav-link:hover {
+      color: #06b6d4;
+      border-bottom-color: #06b6d4;
+    }
+    
+    /* CSS:HERO-START */
+    .section-hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 0;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+    }
+    
+    .hero-title {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #f1f5f9;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: #94a3b8;
+      margin-bottom: 2rem;
+    }
+    
+    .hero-description {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+    
+    .hero-cta {
+      display: inline-block;
+      background-color: #06b6d4;
+      color: #0f172a;
+      padding: 0.875rem 2rem;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      margin: 0.5rem;
+    }
+    
+    .hero-cta:hover {
+      background-color: #0891b2;
+      transform: translateY(-2px);
+    }
+    
+    .hero-image {
+      margin-top: 2rem;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+    /* CSS:HERO-END */
+    
+    /* CSS:ABOUT-START */
+    .section-about {
+      background-color: #1e293b;
+    }
+    
+    .about-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .about-text {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+    
+    .about-placeholder {
+      background-color: #334155;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      border-left: 4px solid #06b6d4;
+    }
+    /* CSS:ABOUT-END */
+    
+    /* CSS:SKILLS-START */
+    .section-skills {
+      background-color: #0f172a;
+    }
+    
+    .skills-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .skills-text {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+    
+    .skills-placeholder {
+      background-color: #1e293b;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      border-left: 4px solid #06b6d4;
+    }
+    /* CSS:SKILLS-END */
+    
+    /* CSS:PROJECTS-START */
+    .section-projects {
+      background-color: #1e293b;
+    }
+    
+    .projects-content {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    
+    .projects-text {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+    
+    .projects-placeholder {
+      background-color: #334155;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      border-left: 4px solid #06b6d4;
+    }
+    /* CSS:PROJECTS-END */
+    
+    /* CSS:CONTACT-START */
+    .section-contact {
+      background-color: #0f172a;
+    }
+    
+    .contact-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .contact-text {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+    
+    .contact-placeholder {
+      background-color: #1e293b;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      border-left: 4px solid #06b6d4;
+    }
+    
+    .contact-list {
+      list-style: none;
+      margin-top: 2rem;
+    }
+    
+    .contact-item {
+      margin-bottom: 1rem;
+    }
+    
+    .contact-link {
+      color: #06b6d4;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+    
+    .contact-link:hover {
+      color: #0891b2;
+      text-decoration: underline;
+    }
+    /* CSS:CONTACT-END */
+    
+    /* 頁尾樣式 */
+    .site-footer {
+      background-color: #1e293b;
+      border-top: 2px solid #334155;
+      padding: 2rem 0;
+      text-align: center;
+      color: #94a3b8;
+    }
+    
+    .footer-text {
+      font-size: 0.95rem;
+    }
+    
+    /* CSS:RWD-START */
+    @media (min-width: 768px) {
+      .section-title {
+        font-size: 2.5rem;
+      }
+      
+      .hero-title {
+        font-size: 3.5rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.5rem;
+      }
+      
+      .nav-menu {
+        gap: 2rem;
+      }
+      
+      .container {
+        padding: 0 2rem;
+      }
+      
+      .section {
+        padding: 6rem 0;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .hero-title {
+        font-size: 4rem;
+      }
+      
+      .section-title {
+        font-size: 3rem;
+      }
+    }
+    /* CSS:RWD-END */
+  </style>
+</head>
+<body class="page">
+  
+  <!-- 導覽列 -->
+  <header class="site-header">
+    <nav class="nav">
+      <a href="#hero" class="nav-brand">林宇軒 · Frontend Dev</a>
+      <ul class="nav-menu">
+        <li><a href="#hero" class="nav-link">首頁</a></li>
+        <li><a href="#about" class="nav-link">關於我</a></li>
+        <li><a href="#skills" class="nav-link">技能</a></li>
+        <li><a href="#projects" class="nav-link">作品集</a></li>
+        <li><a href="#contact" class="nav-link">聯絡我</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- 主要內容區 -->
+  <main>
+    
+    <!-- SECTION:HERO-START -->
+    <section id="hero" class="section section-hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="hero-content">
+          <h1 id="hero-heading" class="hero-title">打造優質前端體驗的工程師</h1>
+          <p class="hero-subtitle">Frontend Developer · UI/UX Enthusiast</p>
+          <p class="hero-description">
+            這是 Hero 區的占位內容。這裡未來會放置一句話的自我介紹、核心職稱（例如 Frontend Developer），以及行動呼籲按鈕（例如：瀏覽作品集、下載履歷）。
+          </p>
+          <p class="hero-description">
+            <strong>開發者提示：</strong>之後會用 Section SDD 的 Prompt 產生正式文案與版面，請把新的 section 程式碼整段貼在 SECTION:HERO-START 和 SECTION:HERO-END 註解中間，完全取代現在這一區。
+          </p>
+          <div>
+            <a href="#projects" class="hero-cta">瀏覽作品集</a>
+            <a href="#contact" class="hero-cta">聯絡我</a>
+          </div>
+          <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=500&fit=crop" alt="在現代辦公室中使用筆記型電腦進行程式開發的前端工程師工作環境" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SECTION:HERO-END -->
+    
+    <!-- SECTION:ABOUT-START -->
+    <section id="about" class="section section-about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="about-content">
+          <h2 id="about-heading" class="section-title">關於我</h2>
+          <div class="about-placeholder">
+            <p class="about-text">
+              這裡目前是 About 區的占位內容。這個區塊未來會用來介紹個人背景、工作經驗、學習歷程，以及對前端開發的熱情與理念。
+            </p>
+            <p class="about-text">
+              <strong>開發者提示：</strong>之後會用另一個 Prompt（Section SDD）產生正式內容，請把新的 section 程式碼整段貼在 SECTION:ABOUT-START 和 SECTION:ABOUT-END 註解中間，完全取代這一區。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SECTION:ABOUT-END -->
+    
+    <!-- SECTION:SKILLS-START -->
+    <section id="skills" class="section section-skills" aria-labelledby="skills-heading">
+      <div class="container">
+        <div class="skills-content">
+          <h2 id="skills-heading" class="section-title">技能專長</h2>
+          <div class="skills-placeholder">
+            <p class="skills-text">
+              這裡目前是 Skills 區的占位內容。這個區塊未來會展示技術技能，例如：HTML、CSS、JavaScript、React、Vue、TypeScript、響應式設計、效能優化等前端技術棧。
+            </p>
+            <p class="skills-text">
+              <strong>開發者提示：</strong>之後會用 Section SDD 的 Prompt 產生完整的技能列表與視覺化呈現，請把新的 section 程式碼整段貼在 SECTION:SKILLS-START 和 SECTION:SKILLS-END 註解中間，完全取代這一區。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SECTION:SKILLS-END -->
+    
+    <!-- SECTION:PROJECTS-START -->
+    <section id="projects" class="section section-projects" aria-labelledby="projects-heading">
+      <div class="container">
+        <div class="projects-content">
+          <h2 id="projects-heading" class="section-title">作品集</h2>
+          <div class="projects-placeholder">
+            <p class="projects-text">
+              這裡目前是 Projects 區的占位內容。這個區塊未來會展示個人或團隊專案作品，包含專案截圖、技術說明、專案連結與 GitHub 連結。
+            </p>
+            <p class="projects-text">
+              <strong>開發者提示：</strong>之後會用 Section SDD 的 Prompt 產生完整的作品卡片與專案描述，請把新的 section 程式碼整段貼在 SECTION:PROJECTS-START 和 SECTION:PROJECTS-END 註解中間，完全取代這一區。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SECTION:PROJECTS-END -->
+    
+    <!-- SECTION:CONTACT-START -->
+    <section id="contact" class="section section-contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="contact-content">
+          <h2 id="contact-heading" class="section-title">聯絡我</h2>
+          <div class="contact-placeholder">
+            <p class="contact-text">
+              這裡目前是 Contact 區的占位內容。這個區塊未來會提供多種聯絡方式，例如：Email、LinkedIn、GitHub、電話等。
+            </p>
+            <p class="contact-text">
+              <strong>開發者提示：</strong>之後會用 Section SDD 的 Prompt 產生完整的聯絡資訊與表單，請把新的 section 程式碼整段貼在 SECTION:CONTACT-START 和 SECTION:CONTACT-END 註解中間，完全取代這一區。
+            </p>
+            <ul class="contact-list">
+              <li class="contact-item">
+                <a href="mailto:hello@example.com" class="contact-link">📧 hello@example.com</a>
+              </li>
+              <li class="contact-item">
+                <a href="https://github.com/yourname" class="contact-link">💻 GitHub</a>
+              </li>
+              <li class="contact-item">
+                <a href="https://www.linkedin.com/in/yourname" class="contact-link">💼 LinkedIn</a>
+              </li>
+              <li class="contact-item">
+                <a href="tel:+886900000000" class="contact-link">📱 +886 900 000 000</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SECTION:CONTACT-END -->
+    
+  </main>
+  
+  <!-- 頁尾版權資訊 -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-text">&copy; 2025 林宇軒 · Frontend Developer. All rights reserved.</p>
+    </div>
+  </footer>
+  
+</body>
+</html>
